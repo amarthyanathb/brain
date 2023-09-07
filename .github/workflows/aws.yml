@@ -21,7 +21,5 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /var/www/autointerdel.ddns.net/wordpress/wp-content/themes
-            
-            echo "$SUDO_PASSWORD" | sudo -S git pull
-            
+            sudo git pull
             sudo chown -R www-data:www-data /var/www/autointerdel.ddns.net/wordpress/wp-content/themes/

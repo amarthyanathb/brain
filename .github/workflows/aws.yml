@@ -1,0 +1,30 @@
+name: SSH into EC2 and Update Code
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Update Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH into EC2 and Update Code
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST_DNS }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            # Change to the specified directory
+            cd /var/www/autointerdel.ddns.net/wordpress/wp-content/themes
+            
+            # Provide the sudo password to the first sudo command
+            echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S git pull
+            
+            # Change ownership of the directory to www-data
+            sudo chown -R www-data:www-data /var/www/autointerdel.ddns.net/wordpress/wp-content/themes/

@@ -1,4 +1,4 @@
-# WordPress Website Deployment Guide
+[steps_to_follow.pdf](https://github.com/amarthyanathb/brain/files/12565313/steps_to_follow.pdf)# WordPress Website Deployment Guide
 
 This guide outlines the deployment of a WordPress website on an AWS EC2 instance running Ubuntu 22.04 LTS with a LEMP (Linux, Nginx, MySQL, PHP) stack. Additionally, we'll cover SSL certificate installation, content caching, gzip compression, GitHub Actions for continuous integration and deployment, and provide security configurations.
 
@@ -63,6 +63,11 @@ Security Considerations
 SSH keys and secrets are securely managed.
 Regular server and WordPress updates are recommended to patch security vulnerabilities.
 Security headers and firewall rules should be maintained for enhanced security.
+
+
+Steps to follow to view a visible change in website 
+Follow the pdf in the repo steps_to_follow.pdf
+
 
 
 

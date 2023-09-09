@@ -20,6 +20,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /var/www/autointerdel.ddns.net/wordpress/wp-content/themes
-            sudo git pull
-            sudo chown -R www-data:www-data /var/www/autointerdel.ddns.net/wordpress/wp-content/themes/
+            cd /home/kesu/CiCd
+            ./deploy.sh
